@@ -18,7 +18,11 @@ def process_walkability_query(user_query: str, data: dict, function_name: str = 
     Returns:
         dict: Contains 'map' (folium.Map) and 'description' (str)
     """
-    client = genai.Client(api_key="AIzaSyCSTZkQaegvbC9l-aId5qLXhZF-rwYZq24")
+    import os
+    api_key = os.getenv("GOOGLE_GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError("GOOGLE_GEMINI_API_KEY environment variable not set")
+    client = genai.Client(api_key=api_key)
 
     try:
         # Step 1: Planner Agent - Analyze query and create action plan

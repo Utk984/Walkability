@@ -41,7 +41,11 @@ def generate_profile_weights(user_type: str, gender: str, age: str, additional_i
     }
     
     try:
-        client = genai.Client(api_key="AIzaSyCSTZkQaegvbC9l-aId5qLXhZF-rwYZq24")
+        import os
+        api_key = os.getenv("GOOGLE_GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GOOGLE_GEMINI_API_KEY environment variable not set")
+        client = genai.Client(api_key=api_key)
         
         # Format the prompt with user data
         prompt = PROFILE_WEIGHTS_PROMPT.format(
