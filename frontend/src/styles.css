@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Global popup and tooltip styling improvements */
+.leaflet-popup-content-wrapper {
+  min-width: 250px !important;
+  max-width: 400px !important;
+}
+
+.leaflet-popup-content {
+  min-width: 240px !important;
+  max-width: 390px !important;
+  margin: 8px 12px !important;
+}
+
+.leaflet-tooltip {
+  min-width: 150px !important;
+  max-width: 300px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Custom tooltip/popup styling for better UX */
+.custom-popup {
+  min-width: 250px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.custom-tooltip {
+  min-width: 150px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+}

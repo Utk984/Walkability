@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+geopandas
+folium
+pandas
+shapely
+branca
+fuzzywuzzy
+python-levenshtein
+networkx
+geopy
