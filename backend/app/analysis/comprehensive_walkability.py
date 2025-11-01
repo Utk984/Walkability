@@ -5,7 +5,7 @@ from shapely.geometry import Point
 from typing import Dict, List, Tuple, Optional
 from scipy.spatial.distance import cdist
 import math
-from config import CATEGORY_MAP
+from app.config import CATEGORY_MAP
 import json
 
 class ComprehensiveWalkabilityCalculator:

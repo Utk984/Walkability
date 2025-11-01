@@ -2,7 +2,7 @@ import json
 from google import genai
 from typing import Dict, Any
 from pydantic import BaseModel
-from config import PROFILE_WEIGHTS_PROMPT
+from app.config import PROFILE_WEIGHTS_PROMPT
 
 class CategoryWeights(BaseModel):
     """Pydantic model for category weights that ensures all required categories are present."""

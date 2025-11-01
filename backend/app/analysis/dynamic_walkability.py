@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from typing import Dict, Optional, Tuple
-from config import CATEGORY_MAP
+from app.config import CATEGORY_MAP
 
 
 def calculate_dynamic_walk_scores(data: dict, category_weights: Dict[str, float]) -> pd.DataFrame:

@@ -2,7 +2,7 @@ import geopandas as gpd
 import pandas as pd
 import folium
 from branca.colormap import linear
-from config import CATEGORY_MAP, CATEGORY_COLORS
+from app.config import CATEGORY_MAP, CATEGORY_COLORS
 
 
 def analyze_sector_amenities(data: dict, sector_name: str):
@@ -21,7 +21,7 @@ def analyze_sector_amenities(data: dict, sector_name: str):
 
     # Try to get comprehensive analysis first
     try:
-        from src.analysis.comprehensive_walkability import get_sector_analysis_from_scores
+        from app.analysis.comprehensive_walkability import get_sector_analysis_from_scores
         comprehensive_analysis = get_sector_analysis_from_scores(sector_name)
         
         if "error" not in comprehensive_analysis:
@@ -229,7 +229,7 @@ def get_top_walkscore_sectors(data: dict, k: int = 5):
     """
     # Load the latest comprehensive walkability scores
     try:
-        from src.analysis.comprehensive_walkability import load_latest_walkability_scores
+        from app.analysis.comprehensive_walkability import load_latest_walkability_scores
         comprehensive_sectors = load_latest_walkability_scores()
         
         if comprehensive_sectors is not None:
@@ -330,7 +330,7 @@ def get_bottom_walkscore_sectors(data: dict, k: int = 5):
     """
     # Load the latest comprehensive walkability scores
     try:
-        from src.analysis.comprehensive_walkability import load_latest_walkability_scores
+        from app.analysis.comprehensive_walkability import load_latest_walkability_scores
         comprehensive_sectors = load_latest_walkability_scores()
         
         if comprehensive_sectors is not None:

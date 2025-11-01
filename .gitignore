@@ -7,7 +7,7 @@
 *.p12
 config.local.*
 
-/lit_review
+backend/utils/literature
 
 # Python
 __pycache__/
@@ -112,10 +112,12 @@ models/
 *.ckpt
 *.safetensors
 
-# Data files (optional - uncomment if needed)
-# *.csv
-# *.geojson
-# *.json
+# Data files - keep processed data out of repo
+backend/data/processed/
+
+# Large CSV files
+*.panos.csv
+chandigarh_panos.csv
 
 # Logs
 *.log

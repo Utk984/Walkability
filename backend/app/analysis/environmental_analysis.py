@@ -4,7 +4,7 @@ import numpy as np
 import networkx as nx
 from typing import Dict, List, Tuple, Optional
 from geopy.distance import geodesic
-from src.analysis.pathfinding import MultiCriteriaPathfinder
+from app.analysis.pathfinding import MultiCriteriaPathfinder
 
 
 def _build_environmental_graph(nodes_gdf, edges_gdf):

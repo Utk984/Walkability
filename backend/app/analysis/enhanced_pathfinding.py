@@ -6,7 +6,7 @@ from typing import Dict, List, Tuple, Optional
 from geopy.distance import geodesic
 
 # Import the environmental graph utilities
-from src.analysis.environmental_analysis import (
+from app.analysis.environmental_analysis import (
     _build_environmental_graph, _find_nearest_node, 
     _calculate_path_stats, _create_path_map
 )

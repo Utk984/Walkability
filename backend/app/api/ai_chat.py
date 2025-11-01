@@ -1,7 +1,7 @@
 import folium
 import json
 from google import genai
-from config import CATEGORY_MAP, CATEGORY_COLORS, PLANNER_PROMPT, CODER_PROMPT
+from app.config import CATEGORY_MAP, CATEGORY_COLORS, PLANNER_PROMPT, CODER_PROMPT
 
 
 def process_walkability_query(user_query: str, data: dict, function_name: str = "fun") -> dict:
@@ -73,25 +73,25 @@ def process_walkability_query(user_query: str, data: dict, function_name: str = 
     # Import all necessary modules that the generated code might need
     try:
         # Import the analysis modules
-        from src.analysis.walkability_analysis import (
+        from app.analysis.walkability_analysis import (
             analyze_sector_amenities, compare_sectors, 
             get_top_walkscore_sectors, get_bottom_walkscore_sectors
         )
-        from src.analysis.map_visualization import (
+        from app.analysis.map_visualization import (
             create_walkscore_choropleth, create_sector_highlight_map, create_comparison_map
         )
-        from src.analysis.pathfinding import initialize_pathfinder, get_walk_paths
-        from src.data.data_loader import load_geospatial_data
+        from app.analysis.pathfinding import initialize_pathfinder, get_walk_paths
+        from app.data.data_loader import load_geospatial_data
         
         # Import new environmental analysis functions
-        from src.analysis.environmental_analysis import (
+        from app.analysis.environmental_analysis import (
             analyze_sector_environmental_quality, find_green_corridors,
             suggest_environmental_path, compare_environmental_quality,
             get_top_environmental_sectors
         )
         
         # Import enhanced pathfinding functions
-        from src.analysis.enhanced_pathfinding import (
+        from app.analysis.enhanced_pathfinding import (
             find_environmental_route_with_pois, analyze_walkability_by_environment,
             suggest_green_walking_circuit
         )
